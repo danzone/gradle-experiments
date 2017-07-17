@@ -1,0 +1,19 @@
+description = """
+Example project to trigger Gradle builds from Java code
+
+Project name: $project.name
+
+More detailed information here..."""
+
+apply plugin: 'java'
+
+defaultTasks 'clean', 'build'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+	compile "org.gradle:gradle-tooling-api:4.0.1"
+
+}

@@ -1,0 +1,3 @@
+ How to run the build on target project:
+ 
+ java -cp build/libs/org.danzone.gradletrigger.jar:/home/daniele/.gradle/caches/modules-2/files-2.1/org.gradle/gradle-tooling-api/4.0.1/8fe4e80221ff129a3434a53f3dfa8055c13c6838/gradle-tooling-api-4.0.1.jar:/home/daniele/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.10/5b338f206827d88acd890739f400a9b7664e5984/slf4j-api-1.7.10.jar  org.danzone.gradletrigger.Application

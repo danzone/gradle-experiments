@@ -1,0 +1,61 @@
+description = """
+Example project for Gradle build
+
+Project name: $project.name
+
+More detailed information here..."""
+
+//apply plugin: 'java'
+
+defaultTasks 'clean', 'compile'
+
+task hello {
+	group 'vogella'
+	description 'The hello task greets Gradle by saying "Hello Gradle'
+
+	doFirst {
+		println 'Hello Gradle'
+	}
+	doLast {
+		println 'Bye bye Gradle'
+	}
+}
+
+task onlySpecifiesCodeForConfigurationPhase {
+	group 'vogella'
+	description 'Configuration phase task example'
+
+	println 'I always get printed even though, I am not invoked'
+}
+
+task anotherUnrelatedTask {
+	doLast {
+		println 'I am in the doLast execution phase'
+	}
+}
+
+task clean {
+	doLast {
+		println 'Executing the clean task'
+	}
+}
+
+task compile {
+	doLast {
+		println 'Executing the compile task'
+	}
+}
+
+task other(dependsOn: 'compile') {
+	doLast {
+		println "I'm not a default task"
+	}
+}
+
+task cleanOther {
+	doLast {
+		println "I want to clean up before running"
+	}
+}
+
+cleanOther.dependsOn clean, compile

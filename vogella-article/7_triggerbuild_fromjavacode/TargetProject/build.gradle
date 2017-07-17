@@ -1,0 +1,22 @@
+apply plugin: 'java'
+apply plugin: 'info.solidsoft.pitest'
+
+buildscript {
+    repositories {
+        mavenCentral()
+        mavenLocal()
+    }
+    dependencies {
+		classpath 'info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.1.11'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+group = "org.danzone.pitexample"
+
+dependencies {
+    testCompile 'junit:junit:4.11'
+}
